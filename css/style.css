@@ -368,43 +368,99 @@ body {
   root-font-size: 14px; }
   body h3 {
     margin: 0; }
+  body p {
+    margin: 0; }
   body .main-bracket {
-    padding: 4rem; }
+    padding: 4rem;
+    width: 960px;
+    margin: 0 auto; }
+  body h1 {
+    font-family: "Poiret One", cursive; }
+  body h2 {
+    font-family: "Lobster", cursive; }
 
-.periodic-table .element {
-  border: 1px solid fuchsia;
+.periodic-table {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  max-width: 12.5rem;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 3rem 0 1.5rem 0; }
-  .periodic-table .element h3 {
-    font-size: 4rem;
-    line-height: 1;
-    -webkit-align-self: center;
-        -ms-flex-item-align: center;
-            align-self: center;
-    margin-bottom: 2rem; }
-  .periodic-table .element .info {
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .periodic-table .element {
+    border: 1px solid #666666;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    width: 12.5rem;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around; }
-    .periodic-table .element .info p:first-of-type {
-      font-style: italic; }
-    .periodic-table .element .info p:last-of-type {
-      font-weight: bolder; }
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem 0 1.5rem 0;
+    box-shadow: 2px 2px 6px #808080;
+    -webkit-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+    margin-bottom: 53.3333333333px; }
+    .periodic-table .element:hover {
+      box-shadow: 4px 4px 10px #808080; }
+    .periodic-table .element.argentum {
+      font-family: "Slabo 27px", serif; }
+    .periodic-table .element.aluminium {
+      font-family: "Open Sans Condensed", sans-serif; }
+    .periodic-table .element.aurum {
+      font-family: "Poiret One", cursive; }
+    .periodic-table .element.boron {
+      font-family: "Lobster", cursive; }
+    .periodic-table .element.bismuth {
+      font-family: "Arvo", serif; }
+    .periodic-table .element.calcium {
+      font-family: "Josefin Sans", sans-serif; }
+    .periodic-table .element.cadmium {
+      font-family: "Pacifico", cursive; }
+    .periodic-table .element.cerium {
+      font-family: "Shadows Into Light", cursive; }
+    .periodic-table .element .atomic-number {
+      line-height: 1;
+      padding: 0 0 0 1rem; }
+    .periodic-table .element h3 {
+      font-size: 4rem;
+      line-height: 1;
+      -webkit-align-self: center;
+          -ms-flex-item-align: center;
+              align-self: center;
+      margin: 2rem 0; }
+    .periodic-table .element .info {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 0 1rem; }
+      .periodic-table .element .info p:first-of-type {
+        font-style: italic; }
+      .periodic-table .element .info p:last-of-type {
+        font-weight: bolder; }
