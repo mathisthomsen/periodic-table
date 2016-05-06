@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
-    $('.overlay').hide();
+    //$('.overlay').hide();
     $('.element').bind('click', function(){
 
-        $(this).find('.overlay').fadeToggle(500);
+        $(this).find('.card').toggleClass('flip');
+        $(this).find('.overlay').toggleClass('flip');
 
     });
 

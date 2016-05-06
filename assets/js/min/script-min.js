@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".element").bind("click",function(){console.log("hey"),$(this).toggleClass("flip")})});
