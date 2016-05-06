@@ -5,43 +5,69 @@
     flex-wrap: wrap
 
     .element
-        border: 1px solid $border
-        display: flex
+        position: relative
+        border: 1px solid $overlay
         width: rem(200px)
-        flex-direction: column
-        justify-content: space-between
-        padding: 1rem 0 1.5rem 0
         box-shadow: 2px 2px 6px $shadow
         +transition()
         margin-bottom: ((960px-4*200px)/3)
+        z-index: 900
 
         &:hover
             box-shadow: 4px 4px 10px $shadow
 
         @import element-fonts
 
-        .atomic-number
-            line-height: 1
-            padding: 0 0 0 1rem
-
-
-        h3
-            font:
-                size: 4rem
-            line-height: 1
-            align-self: center
-            margin: 2rem 0
-
-        .info
+        .card
             display: flex
-            flex-direction: row
+            flex-direction: column
             justify-content: space-between
-            padding: 0 1rem
+            padding: 1rem 0 1.5rem 0
+
+            .atomic-number
+                line-height: 1
+                padding: 0 0 0 1rem
 
 
-            p
-                &:first-of-type
-                    font-style: italic
+            h3
+                font:
+                    size: 4rem
+                line-height: 1
+                align-self: center
+                margin: 2rem 0
 
-                &:last-of-type
-                    font-weight: bolder
+            .info
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                padding: 0 1rem
+
+
+                p
+                    &:first-of-type
+                        font-style: italic
+
+                    &:last-of-type
+                        font-weight: bolder
+
+        .overlay
+            +position(absolute, 0px 0px 0px 0px)
+            padding: 0.5rem
+            background:
+                color: $overlay
+            color: $overlay-copy
+            z-index: 800
+
+            ul
+                list-style: none
+
+                li
+                    padding-bottom: 0.5rem
+
+                    p:first-of-type
+                        font-variant: small-caps
+                        font-size: 0.8em
+
+                    p:last-of-type
+                        font-size: 1.1em
+                        padding-left: 0.5em
