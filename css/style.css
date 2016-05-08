@@ -377,10 +377,30 @@ body {
     padding: 4rem;
     width: 960px;
     margin: 0 auto; }
-  body h1 {
-    font-family: "Poiret One", cursive; }
-  body h2 {
-    font-family: "Lobster", cursive; }
+
+header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/assets/img/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0;
+  box-shadow: 6px 0px 4px #808080; }
+  header section {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 1rem; }
+    header section h1 {
+      font-family: "Poiret One", cursive;
+      font-size: 4rem;
+      margin: 0;
+      padding: 0;
+      color: white; }
+    header section h2 {
+      font-family: "Lobster", cursive;
+      color: #069abc; }
 
 .periodic-table {
   display: -webkit-box;
@@ -401,15 +421,25 @@ body {
           flex-wrap: wrap; }
   .periodic-table .element {
     position: relative;
-    border: 1px solid rgba(150, 150, 150, 0.9);
     width: 12.5rem;
-    box-shadow: 2px 2px 6px #808080;
-    -webkit-transition: all 0.15s ease-out 0s;
-    transition: all 0.15s ease-out 0s;
+    height: 208px;
+    color: #5a5a5a;
+    box-sizing: border-box;
     margin-bottom: 53.3333333333px;
-    z-index: 900; }
-    .periodic-table .element:hover {
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px; }
+    .periodic-table .element:hover .card {
       box-shadow: 4px 4px 10px #808080; }
+    .periodic-table .element:hover .overlay {
+      box-shadow: 4px 4px 10px #808080; }
+    .periodic-table .element.flip .card {
+      z-index: 900;
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+    .periodic-table .element.flip .overlay {
+      z-index: 1000;
+      -webkit-transform: rotateX(0deg) rotateY(0deg);
+              transform: rotateX(0deg) rotateY(0deg); }
     .periodic-table .element.argentum {
       font-family: "Slabo 27px", serif; }
     .periodic-table .element.aluminium {
@@ -427,10 +457,14 @@ body {
     .periodic-table .element.cerium {
       font-family: "Shadows Into Light", cursive; }
     .periodic-table .element .card {
+      border: 1px solid rgba(180, 180, 180, 0.8);
+      box-shadow: 2px 2px 6px #808080;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
+      height: 208px;
+      box-sizing: border-box;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
@@ -440,17 +474,31 @@ body {
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between;
-      padding: 1rem 0 1.5rem 0; }
+      padding: 1rem 0 1.5rem 0;
+      z-index: 900;
+      -webkit-transform: rotateX(0deg) rotateY(0deg);
+              transform: rotateX(0deg) rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transition: -webkit-transform 0.4s ease-in-out, box-shadow 0.2s;
+      -webkit-transition: box-shadow 0.2s, -webkit-transform 0.4s ease-in-out;
+      transition: box-shadow 0.2s, -webkit-transform 0.4s ease-in-out;
+      transition: transform 0.4s ease-in-out, box-shadow 0.2s;
+      transition: transform 0.4s ease-in-out, box-shadow 0.2s, -webkit-transform 0.4s ease-in-out; }
       .periodic-table .element .card .atomic-number {
         line-height: 1;
-        padding: 0 0 0 1rem; }
+        padding: 0 0 0 1rem;
+        opacity: 0.6; }
       .periodic-table .element .card h3 {
         font-size: 4rem;
         line-height: 1;
         -webkit-align-self: center;
             -ms-flex-item-align: center;
                 align-self: center;
-        margin: 2rem 0; }
+        margin: 2rem 0;
+        color: #069abc; }
       .periodic-table .element .card .info {
         display: -webkit-box;
         display: -webkit-flex;
@@ -465,7 +513,8 @@ body {
         -webkit-justify-content: space-between;
             -ms-flex-pack: justify;
                 justify-content: space-between;
-        padding: 0 1rem; }
+        padding: 0 1rem;
+        opacity: 0.6; }
         .periodic-table .element .card .info p:first-of-type {
           font-style: italic; }
         .periodic-table .element .card .info p:last-of-type {
@@ -476,17 +525,49 @@ body {
       right: 0px;
       bottom: 0px;
       left: 0px;
+      box-shadow: 2px 2px 6px #808080;
       padding: 0.5rem;
-      background-color: rgba(150, 150, 150, 0.9);
-      color: white;
-      z-index: 800; }
+      height: 208px;
+      box-sizing: border-box;
+      overflow: hidden;
+      border: 1px solid rgba(180, 180, 180, 0.8);
+      z-index: 800;
+      -webkit-transform: rotateY(-180deg);
+              transform: rotateY(-180deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transition: -webkit-transform 0.4s ease-in-out, box-shadow 0.2s;
+      -webkit-transition: box-shadow 0.2s, -webkit-transform 0.4s ease-in-out;
+      transition: box-shadow 0.2s, -webkit-transform 0.4s ease-in-out;
+      transition: transform 0.4s ease-in-out, box-shadow 0.2s;
+      transition: transform 0.4s ease-in-out, box-shadow 0.2s, -webkit-transform 0.4s ease-in-out; }
+      .periodic-table .element .overlay .tag {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        display: inline-block;
+        color: #069abc;
+        border: 1px solid #069abc;
+        padding: 0.2rem; }
       .periodic-table .element .overlay ul {
         list-style: none; }
         .periodic-table .element .overlay ul li {
-          padding-bottom: 0.5rem; }
+          padding-bottom: 0.5rem;
+          font-family: "Poiret One", cursive; }
           .periodic-table .element .overlay ul li p:first-of-type {
-            font-variant: small-caps;
-            font-size: 0.8em; }
+            font-size: 0.6em;
+            padding: 0.2rem 0.5rem;
+            margin: 0 0 0.9rem 0.3rem;
+            font-weight: 800;
+            letter-spacing: 0.1rem;
+            border-radius: 5px;
+            background-color: #808080;
+            color: white;
+            display: inline; }
           .periodic-table .element .overlay ul li p:last-of-type {
-            font-size: 1.1em;
-            padding-left: 0.5em; }
+            font-size: 0.9em;
+            padding-top: 0.4em;
+            text-align: center;
+            font-weight: 100; }
