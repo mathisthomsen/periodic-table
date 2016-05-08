@@ -1,1 +1,1 @@
-$(document).ready(function(){$(".element").bind("click",function(){$(this).find(".card").toggleClass("flip"),$(this).find(".overlay").toggleClass("flip")})});
+$(document).ready(function(){$(".element").bind("click",function(){$(this).toggleClass("flip")})});
