@@ -1,5 +1,21 @@
 $(document).ready(function(){
 
+    /*alert('dies ist kein Spam!!!');
+    alert('Wirklich! Glauben Sie mir! Ich will nur, dass Sie ganz viel Geld gewinnen!');
+    alert('... und vielleicht eine Penispumpe...');
+    var name = prompt('Wie ist Ihr Name?');
+    console.log(name);
+    if (name === 'annika') {
+        console.log(name);
+        return;
+    }
+    else {
+        name=prompt('Nein wirklich jetzt! Wie ist Ihr Name?');
+        console.log(name);
+    }
+    console.log(name);*/
+
+
     $('.element').bind('click', function(){
 
         var trivia=$(this).data("trivia");
