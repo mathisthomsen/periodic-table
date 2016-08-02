@@ -1,1 +1,1 @@
-$(document).ready(function(){$(".element").bind("click",function(){$(this).toggleClass("flip")})});
+$(document).ready(function(){$(".element").bind("click",function(){var n=$(this).data("trivia");$(this).parent().next().append('<div class="inner-modal"><h2>Trivia</h2>'+n+"</div>"),$(".modal").fadeToggle()}),$(".modal").mousedown(function(n){var i=$(n.target);i.is(".inner-modal")||i.parents().is(".inner-modal")||$(".modal").fadeToggle(function(){$(this).find(".inner-modal").remove()})})});
